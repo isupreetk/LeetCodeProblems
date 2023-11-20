@@ -1,15 +1,5 @@
 function plusOne(inputArray) {
 
-    // if (inputArray.length = 1 && inputArray[0] === 9) {
-    //     inputArray[0] += 1;
-    //     newArrayElement = inputArray.toString().split("");
-    //     for (let m = 0; m < newArrayElement.length; m++) {
-    //         newArrayElement[m] = Number(newArrayElement[m]);
-    //     }
-    // }
-    // else {
-
-
     let carry = 0;
     let newArrayElement = [];
 
@@ -25,11 +15,9 @@ function plusOne(inputArray) {
             }
         }
     }
-    // }
 
     if (inputArray[0] > 9) {
         let newArray = inputArray[0];
-        console.log("newArray", newArray);
 
         newArrayElement = newArray.toString().split("");
 
@@ -37,22 +25,13 @@ function plusOne(inputArray) {
             newArrayElement[k] = Number(newArrayElement[k]);
         }
 
-        console.log("newArrayElement", newArrayElement);
-        /* for single digit */
-        //     if (inputArray.length > 1) {
         for (let j = 1; j < inputArray.length; j++) {
             newArrayElement.push(inputArray[j]);
         }
-        // } 
     }
     else {
         newArrayElement = inputArray;
     }
 
-    console.log("output", inputArray);
-    console.log("final output", newArrayElement);
-
     return newArrayElement;
 }
-
-plusOne([1, 2, 9, 9]);
