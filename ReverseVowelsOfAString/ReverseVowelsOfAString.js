@@ -36,3 +36,34 @@ var reverseVowels = function (s) {
 };
 
 // Approach 3
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseVowels = function (s) {
+  let vowelsList = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  let arr = s.split("");
+  let p1 = 0;
+  let p2 = arr.length - 1;
+  let temp;
+  while (p1 < p2) {
+    if (!vowelsList.includes(arr[p1])) {
+      p1++;
+      continue;
+    }
+    if (!vowelsList.includes(arr[p2])) {
+      p2--;
+      continue;
+    }
+    if (p1 > -1 && p2 < arr.length) {
+      temp = arr[p1];
+      arr[p1] = arr[p2];
+      arr[p2] = temp;
+      p1++;
+      p2--;
+    }
+  }
+  s = arr.join("");
+  return s;
+};
