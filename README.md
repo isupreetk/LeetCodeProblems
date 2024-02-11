@@ -6,6 +6,6 @@ You can view my submissions [here](https://leetcode.com/supreet97/).
 
 ### Acknowledgments
 
-A big thanks to the LeetCode community for providing a platform to practice and improve our coding skills. Let's keep learning and growing together!
+A big thanks to the LeetCode community for providing a platform to practice and improve our coding skills. Let's keep learning and growing!
 
 Happy Coding! 🚀
