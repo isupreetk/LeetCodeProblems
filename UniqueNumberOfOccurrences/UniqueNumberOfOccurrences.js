@@ -2,25 +2,38 @@
  * @param {number[]} arr
  * @return {boolean}
  */
-var uniqueOccurrences = function (arr) {
+var uniqueOccurrences = function(arr) {
   let occurrences = new Map();
-  // console.log("occurrences", occurrences.size);
-
+  let noOfOccurrences = [];
+  let uniqueOccurrences = new Map();
+  let answer = true;
   let count = 0;
 
   for (let i = 0; i < arr.length; i++) {
-    if (occurrences.get(arr[i]) === undefined) {
-      occurrences.set(arr[i], count + 1);
-      // console.log("occurrences", occurrences);
-    } else {
-      // console.log("arr[i]", arr[i]);
-      // console.log("occurrences.get(arr[i])", occurrences.get(arr[i]));
-      occurrences.set(arr[i], occurrences.get(arr[i]) + 1);
-    }
+      
+      if (occurrences.get(arr[i]) === undefined) {
+          occurrences.set(arr[i], count+1);
+      }
+      else {
+          occurrences.set(arr[i], occurrences.get(arr[i])+1);
+      }
   }
-  console.log("occurrences", occurrences);
 
   for (let [key, value] of occurrences) {
-    console.log(key + " is " + value);
+      noOfOccurrences.push(value);
   }
+
+  for (let j = 0; j < noOfOccurrences.length; j++) {
+      if (uniqueOccurrences.get(noOfOccurrences[j]) === undefined) {
+          uniqueOccurrences.set(noOfOccurrences[j], true);
+      }
+      else {
+          uniqueOccurrences.set(noOfOccurrences[j], false);
+      }
+  }
+
+  for (let [key, value] of uniqueOccurrences) {
+      answer = (answer && value);
+  }
+  return answer;
 };
