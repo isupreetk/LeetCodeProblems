@@ -5,19 +5,31 @@
  */
 var reversePrefix = function (word, ch) {
   let chIndex;
+  let indexFound = false;
   let temp = "";
+  let result;
   for (let i = 0; i < word.length; i++) {
     if (word[i] === ch) {
-      console.log("ch found");
       chIndex = i;
-      // logic for string reversal / char swapping
-      // for (let j = chIndex; j >=0; j-- ) {
-      //     console.log("word[j]", word[j]);
-      //     temp = word[j];
-      //     word[0] = word[j];
-      //     word[j] = temp;
-      //     console.log("word", word);
-      // }
+      indexFound = true;
+    }
+    if (indexFound) {
+      break;
     }
   }
+
+  // logic for string reversal / char swapping
+
+  let arr = word.split("");
+
+  for (let j = 0; j <= chIndex + 1; j++) {
+    while (j < chIndex - j) {
+      temp = arr[chIndex - j];
+      arr[chIndex - j] = arr[j];
+      arr[j] = temp;
+      j++;
+    }
+  }
+  result = arr.join("");
+  return result;
 };
