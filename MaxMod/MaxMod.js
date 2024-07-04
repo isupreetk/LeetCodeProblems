@@ -8,7 +8,7 @@ Problem Description -
 
 //param A : array of integers
 //return an integer
-function solve(A) {
+function findMaxMod(A) {
   let mod = 0;
   let maxMod = 0;
 

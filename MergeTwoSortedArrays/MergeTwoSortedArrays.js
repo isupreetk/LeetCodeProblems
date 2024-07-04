@@ -1,7 +1,7 @@
 //param A : array of integers
 //param B : array of integers
 //return a array of integers
-function solve(A, B) {
+function mergeTwoSortedArrays(A, B) {
   let arr = [];
   let countA = 0;
   let countB = 0;

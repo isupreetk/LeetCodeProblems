@@ -6,7 +6,7 @@ Problem Description
 
 //param A : array of integers
 //return an integer
-function solve(A) {
+function consecutiveElements(A) {
   let diff = 0;
   let sum = 0;
   A.sort((a, b) => a - b);
