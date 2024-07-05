@@ -31,17 +31,22 @@ function kthsmallest(A, B) {
   let min;
   let temp;
   let index;
+  let newMin;
   for (let i = 0; i < B; i++) {
     min = A[i];
+    newMin = false;
     for (let j = i + 1; j < A.length; j++) {
       if (A[j] < min) {
         min = A[j];
         index = j;
+        newMin = true;
       }
     }
-    temp = A[i];
-    A[i] = min;
-    A[index] = temp;
+    if (newMin) {
+      temp = A[i];
+      A[i] = min;
+      A[index] = temp;
+    }
   }
-  return min;
+  return A[B - 1];
 }
