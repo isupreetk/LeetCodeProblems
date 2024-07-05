@@ -7,6 +7,8 @@ Problem Description
 //param A : array of integers
 //param B : integer
 //return an integer
+
+// ------------------- Approach 1 ------------------
 function kthsmallest(A, B) {
   let temp;
   let small;
@@ -21,4 +23,25 @@ function kthsmallest(A, B) {
   }
   small = A[B - 1];
   return small;
+}
+
+// --------------- Approach 2 - Selection Sort ---------------
+
+function kthsmallest(A, B) {
+  let min;
+  let temp;
+  let index;
+  for (let i = 0; i < B; i++) {
+    min = A[i];
+    for (let j = i + 1; j < A.length; j++) {
+      if (A[j] < min) {
+        min = A[j];
+        index = j;
+      }
+    }
+    temp = A[i];
+    A[i] = min;
+    A[index] = temp;
+  }
+  return min;
 }
