@@ -14,23 +14,18 @@
  * @return {boolean}
  */
 var areNumbersAscending = function (s) {
-  let numArr = [];
-  let flag = false;
+  let num1 = 0;
+  let num2 = 0;
   s = s.split(" ");
   for (let i = 0; i < s.length; i++) {
     if (Number.isInteger(Number(s[i]))) {
-      numArr.push(s[i]);
+      num1 = num2;
+      num2 = Number(s[i]);
+
+      if (num2 <= num1) {
+        return false;
+      }
     }
   }
-
-  for (let j = 0; j < numArr.length - 1; j++) {
-    if (Number(numArr[j]) < Number(numArr[j + 1])) {
-      flag = true;
-    } else {
-      flag = false;
-      break;
-    }
-  }
-
-  return flag;
+  return true;
 };
