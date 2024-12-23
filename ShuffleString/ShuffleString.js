@@ -13,11 +13,10 @@ Problem Description
  * @return {string}
  */
 var restoreString = function(s, indices) {
-    let a = s.split("");
     let b = [];
     
     for (let i = 0; i < indices.length; i++) {
-        b[indices[i]] = a[i];
+        b[indices[i]] = s[i];
     }
     return b.join("");
 };
