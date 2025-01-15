@@ -8,6 +8,7 @@ Problem Description
 
 */
 
+// Solution 1 - nested for
 /**
  * @param {string[][]} paths
  * @return {string}
@@ -31,4 +32,22 @@ var destCity = function (paths) {
         }
     }
     return destination;
+};
+
+// Solution 2 - hashmap
+
+/**
+ * @param {string[][]} paths
+ * @return {string}
+ */
+var destCity = function (paths) {
+    let pathsMap = new Map();
+    for (let i = 0; i < paths.length; i++) {
+     pathsMap.set(paths[i][0], paths[i][1]);
+    }
+    for (let j = 0; j < paths.length; j++) {
+        if (pathsMap.get(paths[j][1]) === undefined) {
+            return paths[j][1];
+        }
+    }
 };
