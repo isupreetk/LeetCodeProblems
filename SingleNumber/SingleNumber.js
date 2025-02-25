@@ -8,6 +8,7 @@ Problem Description
     You must implement a solution with a linear runtime complexity and use only constant extra space.
 */
 
+//  ----------------- Solution 1 ------------------
 /**
  * @param {number[]} nums
  * @return {number}
@@ -27,4 +28,20 @@ var singleNumber = function(nums) {
             return key;
         }
     }
+};
+
+
+// ------------------ Solution 2 ------------------
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums) {
+    let xorRes = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        xorRes = xorRes ^ nums[i];
+    }
+    return xorRes;
 };
